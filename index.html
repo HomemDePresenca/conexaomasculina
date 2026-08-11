@@ -25,6 +25,7 @@
             --red-glow: #E63946;
             --white-main: #F5F5F5;
             --white-sec: #A3A3A3;
+            --border-subtle: rgba(255, 255, 255, 0.05);
             --font-heading: 'Bebas Neue', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
@@ -144,13 +145,23 @@
         .purchase-approved {
             background: rgba(46, 204, 113, 0.08); border: 1px solid #2ecc71; color: #2ecc71;
             padding: 8px 20px; border-radius: 50px; display: inline-flex; align-items: center; gap: 6px;
-            font-weight: 600; margin: 0 auto 32px auto; font-size: 14px;
+            font-weight: 600; margin: 0 auto 20px auto; font-size: 14px;
         }
 
-        .hero h1 { font-size: 46px; line-height: 0.95; margin-bottom: 16px; }
+        /* TAG DE SEGUNDA CHANCE */
+        .opportunity-tag {
+            display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px; color: var(--red-main);
+            background: rgba(193,18,31,0.1); border: 1px solid rgba(193,18,31,0.3);
+            padding: 6px 14px; border-radius: 20px; margin: 0 auto 20px auto;
+        }
+
+        .hero h1 { font-size: 44px; line-height: 0.98; margin-bottom: 16px; }
         .hero h1 span.white { display: block; background: linear-gradient(180deg, #fff, #999); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero h1 span.red { display: block; color: var(--red-main); text-shadow: 0 0 30px rgba(193, 18, 31, 0.4); }
-        .hero .subheadline { font-size: 16px; color: var(--white-sec); max-width: 340px; margin: 0 auto 32px; line-height: 1.5; }
+        .hero .subheadline { font-size: 16px; color: var(--white-sec); max-width: 360px; margin: 0 auto 12px; line-height: 1.55; }
+        .hero .subheadline strong { color: var(--white-main); font-weight: 600; }
+        .hero .reassurance { font-size: 13px; color: #777; max-width: 340px; margin: 0 auto 32px; line-height: 1.5; }
 
         /* BOTÃO GLOBAL */
         .btn {
@@ -187,6 +198,21 @@
         .timeline-item h4 { font-family: var(--font-body); color: var(--white-main); font-size: 16px; margin-bottom: 6px; font-weight: 600; }
         .timeline-item p { font-size: 14px; color: var(--white-sec); line-height: 1.5; }
 
+        /* === RESULTADO ESPERADO === */
+        .eyebrow {
+            display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 2px;
+            color: var(--red-main); margin-bottom: 10px; text-align: center; font-weight: 700;
+        }
+        .outcomes-list { list-style: none; padding: 0; margin-top: 24px; display: flex; flex-direction: column; gap: 16px; }
+        .outcomes-list li { display: flex; gap: 14px; align-items: flex-start; }
+        .outcomes-num {
+            flex-shrink: 0; width: 26px; height: 26px; border: 1px solid var(--red-main); color: var(--red-main);
+            font-family: var(--font-heading); font-size: 14px; display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; margin-top: 1px;
+        }
+        .outcomes-list p { font-size: 14px; color: #d1d1d1; line-height: 1.6; font-weight: 400; margin: 0; }
+        .outcomes-list p strong { color: #fff; font-weight: 700; }
+
         /* === 3. TEXTO E LISTA === */
         .story-section p { font-size: 16px; color: var(--white-sec); margin-bottom: 20px; line-height: 1.6; }
         .story-section p strong { color: var(--white-main); font-weight: 600; }
@@ -200,6 +226,7 @@
             content: '"'; position: absolute; top: -10px; right: 20px;
             font-family: serif; font-size: 60px; color: rgba(193, 18, 31, 0.1); line-height: 1;
         }
+        .highlight-box strong { color: #fff; font-style: normal; }
 
         .target-list-check { list-style: none; padding: 0; margin-top: 24px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 24px; border-radius: 12px; }
         .target-list-check li { position: relative; padding-left: 32px; margin-bottom: 16px; font-size: 15px; color: var(--white-sec); line-height: 1.5; }
@@ -207,6 +234,47 @@
         .target-list-check li::before {
             content: '✔'; position: absolute; left: 0; top: 0; color: #2ecc71; font-size: 14px;
         }
+
+        /* === COMPARATIVO ESSENCIAL x COMPLETO === */
+        .compare-wrap {
+            display: flex; flex-direction: column; gap: 14px; margin-top: 24px;
+        }
+        .compare-col {
+            border-radius: 12px; padding: 22px 20px; border: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.015);
+        }
+        .compare-col.included {
+            border-color: rgba(46, 204, 113, 0.35); background: rgba(46, 204, 113, 0.04);
+        }
+        .compare-col.excluded {
+            border-color: rgba(255,255,255,0.06); background: rgba(255,255,255,0.01);
+        }
+        .compare-head {
+            display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;
+        }
+        .compare-head h4 {
+            font-family: var(--font-body); font-size: 15px; font-weight: 700; text-transform: none;
+            letter-spacing: 0; color: #fff;
+        }
+        .compare-badge {
+            font-size: 10px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;
+            padding: 4px 10px; border-radius: 20px;
+        }
+        .compare-badge.yes { color: #4ade80; background: rgba(46, 204, 113, 0.12); border: 1px solid rgba(46, 204, 113, 0.4); }
+        .compare-badge.no { color: #888; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); }
+        .compare-list { list-style: none; padding: 0; margin: 0; }
+        .compare-list li { position: relative; padding-left: 26px; margin-bottom: 10px; font-size: 13.5px; line-height: 1.5; }
+        .compare-list li:last-child { margin-bottom: 0; }
+        .compare-col.included .compare-list li { color: #d1d1d1; }
+        .compare-col.included .compare-list li::before { content: '✔'; position: absolute; left: 0; top: 0; color: #2ecc71; font-size: 13px; }
+        .compare-col.excluded .compare-list li { color: #6b6b6b; }
+        .compare-col.excluded .compare-list li::before { content: '✕'; position: absolute; left: 0; top: 0; color: #6b6b6b; font-size: 12px; }
+
+        .compare-note {
+            margin-top: 18px; font-size: 13px; color: var(--white-sec); text-align: center; line-height: 1.6;
+            padding: 16px; border-radius: 8px; background: rgba(193,18,31,0.05); border: 1px solid rgba(193,18,31,0.2);
+        }
+        .compare-note strong { color: #fff; }
 
         /* === 4. MÓDULOS === */
         .card {
@@ -224,6 +292,7 @@
         .card h3 { font-family: var(--font-body); font-size: 19px; text-transform: none; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: #fff; }
         .card p { font-size: 15px; color: var(--white-sec); line-height: 1.6; margin-bottom: 16px; }
         .card-insight { font-size: 13px; color: #888; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 16px; font-style: italic; }
+        .card-insight strong { color: #aaa; font-style: normal; }
 
         /* === 5. ALERTA === */
         .science-box {
@@ -251,14 +320,20 @@
             box-shadow: 0 0 50px rgba(193,18,31,0.15);
         }
         .offer-box::before {
-            content: 'OFERTA ÚNICA DE DOWNSELL'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-            background: var(--red-main); color: #fff; font-size: 12px; font-weight: bold;
+            content: 'SEGUNDA CHANCE • SÓ NESTA PÁGINA'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+            background: var(--red-main); color: #fff; font-size: 11px; font-weight: bold;
             padding: 4px 16px; border-radius: 20px; letter-spacing: 1px; white-space: nowrap;
         }
-        .price-container { margin-bottom: 24px; display: flex; flex-direction: column; gap: 4px; }
-        .price-old { font-size: 16px; text-decoration: line-through; color: #666; font-weight: 500;}
-        .price-new { font-size: 48px; color: #fff; font-family: var(--font-heading); text-shadow: 0 0 20px rgba(193,18,31,0.5);}
-        
+
+        /* PILHA DE VALOR (3 níveis) */
+        .price-stack { margin: 8px 0 24px 0; display: flex; flex-direction: column; gap: 2px; }
+        .price-stack .stack-row { display: flex; align-items: baseline; justify-content: center; gap: 8px; }
+        .price-stack .stack-tag { font-size: 12px; color: #777; text-transform: uppercase; letter-spacing: 0.5px; width: 150px; text-align: right; }
+        .price-stack .stack-val { font-size: 16px; color: #666; text-decoration: line-through; font-weight: 600; width: 100px; text-align: left; }
+        .price-stack .stack-row.final { margin-top: 10px; }
+        .price-stack .stack-row.final .stack-tag { color: var(--white-sec); font-weight: 600; }
+        .price-stack .stack-row.final .stack-val { font-size: 48px; color: #fff; font-family: var(--font-heading); text-decoration: none; text-shadow: 0 0 20px rgba(193,18,31,0.5); width: auto; }
+
         .timer-wrapper { margin-top: 24px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
         .timer-label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 2px; }
         .timer-boxes { display: flex; align-items: center; gap: 8px; }
@@ -312,6 +387,11 @@
             }
             .sticky-cta.visible { transform: translate(-50%, 0); }
         }
+
+        @media (max-width: 380px) {
+            .price-stack .stack-tag { width: 120px; font-size: 11px; }
+            .price-stack .stack-val { width: 80px; font-size: 14px; }
+        }
     </style>
     <script>
 !function(f,b,e,v,n,t,s)
@@ -356,42 +436,66 @@ src="https://www.facebook.com/tr?id=4635192300140692&ev=PageView&noscript=1"
             <div class="purchase-approved">
                 ✅ Sua compra foi aprovada!
             </div>
+
+            <span class="opportunity-tag">🔁 Segunda Chance • Versão Reduzida</span>
             
             <h1>
                 <span class="white">O INVESTIMENTO FICOU</span>
                 <span class="red">ACIMA DO ORÇAMENTO?</span>
             </h1>
-            <p class="subheadline">Isso é totalmente compreensível. Mas antes de seguir para a página de obrigado, preparei uma última oportunidade essencial para que você não saia de mãos vazias.</p>
+            <p class="subheadline">Tudo bem — <strong>talvez você não precise da versão completa agora.</strong> Por isso liberamos uma versão mais direta do método: só o essencial, pelo valor mais baixo que oferecemos, para você não sair desta página de mãos vazias.</p>
+            <p class="reassurance">Sem letras miúdas: abaixo você vê exatamente o que está incluso, o que fica de fora, e por que mesmo assim vale a pena.</p>
             
-            <a href="#oferta" class="btn">Ver a alternativa</a>
+            <a href="#oferta" class="btn">Ver a Versão Essencial</a>
         </section>
 
         <section class="scroll-reveal delay-1">
-            <h2 class="section-title" style="font-size: 26px; text-align: left; margin-top: 40px;">Uma alternativa <br><span>feita para você</span></h2>
+            <h2 class="section-title" style="font-size: 26px; text-align: left; margin-top: 40px;">Por que essa <br><span>oferta existe</span></h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h4>Você abriu mão do método completo</h4>
-                    <p>Sabemos que o investimento original pode não ser o ideal para o seu momento agora, e está tudo bem.</p>
+                    <h4>Você recusou o método completo, e está tudo certo</h4>
+                    <p>Entendemos que o investimento original pode não caber no seu momento agora. Não é para todo mundo, e essa decisão não te tira nenhuma chance.</p>
                 </div>
                 <div class="timeline-item">
-                    <h4>A base essencial</h4>
-                    <p>Eu não quero que você perca a chance de transformar suas conversas. Por isso, separei os dois primeiros e mais importantes módulos do método.</p>
+                    <h4>Por isso liberamos uma versão reduzida</h4>
+                    <p>Separamos os dois módulos mais importantes do método completo — a base que sustenta tudo o resto — e reduzimos o valor para caber no seu orçamento.</p>
                 </div>
                 <div class="timeline-item">
-                    <h4>O resultado</h4>
-                    <p>Você leva a base sólida necessária para começar a criar atração hoje mesmo, investindo muito menos.</p>
+                    <h4>Essa é a sua segunda chance</h4>
+                    <p>Essa versão só existe nesta página. Se você sair agora, ela some — e a próxima vez que você for conversar com alguém, vai estar exatamente do mesmo jeito que está hoje.</p>
                 </div>
             </div>
         </section>
 
         <div class="section-divider"></div>
 
+        <section class="expected-result scroll-reveal">
+            <span class="eyebrow">Na Prática</span>
+            <h2 class="section-title" style="font-size: 30px;">O Que Muda <span>Para Você</span></h2>
+            <ul class="outcomes-list">
+                <li>
+                    <span class="outcomes-num">1</span>
+                    <p>Você aprende a <strong>manter uma conversa interessante</strong> sem ficar sem assunto depois dos primeiros minutos.</p>
+                </li>
+                <li>
+                    <span class="outcomes-num">2</span>
+                    <p>Você entende <strong>o que realmente cria conexão emocional</strong>, em vez de depender só de sorte ou química do momento.</p>
+                </li>
+                <li>
+                    <span class="outcomes-num">3</span>
+                    <p>Você sabe <strong>exatamente o que fazer quando a conversa esfria</strong>, em vez de travar ou insistir do jeito errado.</p>
+                </li>
+            </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
         <section class="story-section scroll-reveal">
             <h2 class="section-title">O que você vai <span>aprender?</span></h2>
-            <p>Você não precisa levar o treinamento completo se quiser apenas dar o primeiro passo. Dominar os <strong>fundamentos da conexão</strong> já é o suficiente para virar o jogo a seu favor e começar a ver grandes mudanças.</p>
+            <p>Você não precisa levar o treinamento completo se quiser apenas dar o primeiro passo. Dominar os <strong>fundamentos da conexão</strong> já é o suficiente para virar o jogo a seu favor e começar a ver mudanças reais nas suas conversas.</p>
             
             <div class="highlight-box">
-                "Você não precisa sair daqui sem nada. O essencial já é tudo que você precisa para tornar suas interações infinitamente mais interessantes."
+                "Você não precisa sair daqui sem nada. <strong>O essencial já é tudo que você precisa</strong> para tornar suas interações infinitamente mais interessantes."
             </div>
 
             <ul class="target-list-check scroll-reveal">
@@ -408,19 +512,56 @@ src="https://www.facebook.com/tr?id=4635192300140692&ev=PageView&noscript=1"
         <div class="section-divider"></div>
 
         <section class="features scroll-reveal">
+            <h2 class="section-title">Essencial <span>x Completo</span></h2>
+            <p class="text-center" style="color: var(--white-sec); margin-bottom: 8px;">Para você decidir com clareza, aqui está exatamente a diferença entre o que você leva agora e o método completo.</p>
+            
+            <div class="compare-wrap">
+                <div class="compare-col included">
+                    <div class="compare-head">
+                        <h4>Versão Essencial (esta oferta)</h4>
+                        <span class="compare-badge yes">Incluso</span>
+                    </div>
+                    <ul class="compare-list">
+                        <li>Módulo 1 — Como Criar Conexão Emocional</li>
+                        <li>Módulo 2 — Conversas que Geram Atração</li>
+                        <li>Acesso imediato e vitalício aos 2 módulos</li>
+                        <li>Garantia incondicional de 7 dias</li>
+                    </ul>
+                </div>
+                <div class="compare-col excluded">
+                    <div class="compare-head">
+                        <h4>Exclusivo do Método Completo</h4>
+                        <span class="compare-badge no">Não incluso</span>
+                    </div>
+                    <ul class="compare-list">
+                        <li>Módulo 3 — Do Interesse ao Relacionamento</li>
+                        <li>Módulo 4 — Domínio das Conversas</li>
+                        <li>Bônus exclusivos do método completo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="compare-note">
+                <strong>Por que ainda vale a pena:</strong> os Módulos 1 e 2 são a base sobre a qual tudo o resto é construído. Sem essa fundação, os módulos avançados não têm em cima do que funcionar — com ela, você já sai desta página sabendo aplicar o essencial hoje mesmo.
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="features scroll-reveal">
             <h2 class="section-title">A Versão <span>Essencial</span></h2>
-            <p class="text-center" style="color: var(--white-sec); margin-bottom: 24px;">Deixamos claro: este acesso contempla exclusivamente os 2 módulos fundamentais para iniciar sua transformação.</p>
+            <p class="text-center" style="color: var(--white-sec); margin-bottom: 24px;">Este acesso contempla exclusivamente os 2 módulos fundamentais do método — o suficiente para você começar a mudar suas conversas hoje.</p>
             
             <div class="card">
                 <h3>♟️ Módulo 1: Como Criar Conexão Emocional</h3>
-                <p>Descubra o que realmente faz uma mulher se conectar a você, como fazer qualquer conversa sair do superficial e os erros fatais que destroem a conexão logo de cara.</p>
-                <div class="card-insight">Inclui técnicas sobre o poder de usar histórias e experiências para criar momentos memoráveis na cabeça dela.</div>
+                <p>Você vai aprender a fazer qualquer conversa sair do superficial e entender os erros fatais que destroem a conexão logo de cara — usando histórias e experiências para criar momentos que ela lembra depois.</p>
+                <div class="card-insight"><strong>Resultado:</strong> conversas que evoluem em vez de morrer no "kkk".</div>
             </div>
             
             <div class="card">
                 <h3>👁️ Módulo 2: Conversas que Geram Atração</h3>
-                <p>Aprenda a encontrar o equilíbrio perfeito entre demonstrar interesse e ser um desafio. Saiba como criar mais tensão e mistério para fazer ela pensar em você o dia todo.</p>
-                <div class="card-insight">Traz o script prático de como ser interessante sem forçar e o que fazer exatamente quando o assunto esfriar.</div>
+                <p>Você vai encontrar o equilíbrio entre demonstrar interesse e ser um desafio, criando tensão e mistério de forma natural — e vai saber exatamente o que fazer quando o assunto esfriar.</p>
+                <div class="card-insight"><strong>Resultado:</strong> você nunca mais fica sem saber o que responder.</div>
             </div>
         </section>
 
@@ -429,7 +570,7 @@ src="https://www.facebook.com/tr?id=4635192300140692&ev=PageView&noscript=1"
         <section class="science-box scroll-reveal">
             <div class="icon">⏳</div>
             <h2 class="section-title" style="font-size: 28px; margin-bottom: 16px;">Sua Última <br><span>Oportunidade</span></h2>
-            <p>Você acabou de recusar a oferta principal e está tudo certo. No entanto, se você sair desta página agora, perderá a chance de acessar a fundação do método por este valor exclusivo.</p>
+            <p>Você acabou de recusar a oferta principal, e está tudo certo. Mas se você sair desta página agora, perde a chance de levar a fundação do método pelo valor mais baixo que já oferecemos.</p>
         </section>
 
         <div class="section-divider"></div>
@@ -440,19 +581,29 @@ src="https://www.facebook.com/tr?id=4635192300140692&ev=PageView&noscript=1"
         </section>
 
         <section class="offer-box scroll-reveal" id="oferta">
-            <div class="price-container">
-                <span class="price-old">Versão completa: R$ 47,90</span>
-                <span class="price-new">R$ 23,95</span>
+            <div class="price-stack">
+                <div class="stack-row">
+                    <span class="stack-tag">Valor do método completo</span>
+                    <span class="stack-val">R$ 549,00</span>
+                </div>
+                <div class="stack-row">
+                    <span class="stack-tag">Oferta que você recusou</span>
+                    <span class="stack-val">R$ 47,90</span>
+                </div>
+                <div class="stack-row final">
+                    <span class="stack-tag">Sua Versão Essencial hoje</span>
+                    <span class="stack-val">R$ 23,95</span>
+                </div>
             </div>
 
             <!-- Adicione o link de checkout do Downsell no href abaixo -->
-            <a href="https://pay.kirvano.com/787be82e-2cb2-4b68-8a07-e39463487b80" class="btn">SIM! AGORA ESSE INVESTIMENTO FAZ SENTIDO</a>
+            <a href="https://pay.kirvano.com/787be82e-2cb2-4b68-8a07-e39463487b80" class="btn">Quero a Versão Essencial</a>
             
             <!-- Adicione o link da página de obrigado padrão no href abaixo -->
             <a href="https://homemdepresenca.github.io/obrigado" class="btn-secondary">Não, obrigado. Prefiro ficar com o que eu já tenho.</a>
 
             <div class="timer-wrapper">
-                <div class="timer-label">Oferta de downsell encerra em:</div>
+                <div class="timer-label">Segunda chance encerra em:</div>
                 <div class="timer-boxes">
                     <div class="timer-box" id="t-hours">00</div><span class="timer-sep">:</span>
                     <div class="timer-box" id="t-minutes">14</div><span class="timer-sep">:</span>
@@ -471,10 +622,14 @@ src="https://www.facebook.com/tr?id=4635192300140692&ev=PageView&noscript=1"
 
         <section class="faq scroll-reveal">
             <h2 class="section-title">Dúvidas <span>Frequentes</span></h2>
-            
+
+            <div class="faq-item">
+                <button class="faq-question">Qual a diferença entre esta oferta e a versão completa? <span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p>A Versão Essencial traz os Módulos 1 e 2 (Como Criar Conexão Emocional e Conversas que Geram Atração) — a base do método. A versão completa inclui também os Módulos 3 e 4, além dos bônus exclusivos, voltados para aprofundar e acelerar os resultados depois que você já domina o essencial.</p></div>
+            </div>
             <div class="faq-item">
                 <button class="faq-question">O que está incluso nesta versão? <span class="faq-icon">+</span></button>
-                <div class="faq-answer"><p>Nesta versão Essencial de Downsell, você recebe acesso exclusivo aos Módulos 1 e 2 (Como Criar Conexão Emocional e Conversas que Geram Atração). Os demais módulos avançados da versão completa não estão inclusos.</p></div>
+                <div class="faq-answer"><p>Nesta versão Essencial, você recebe acesso exclusivo aos Módulos 1 e 2. Os módulos avançados e os bônus da versão completa não estão inclusos.</p></div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">O acesso é imediato? <span class="faq-icon">+</span></button>
@@ -500,7 +655,7 @@ src="https://www.facebook.com/tr?id=4635192300140692&ev=PageView&noscript=1"
 
     <div class="sticky-cta" id="stickyCta">
         <div class="sticky-container">
-            <a href="#oferta" class="btn" style="padding: 16px; font-size: 16px;">Garantir Versão Essencial</a>
+            <a href="#oferta" class="btn" style="padding: 16px; font-size: 16px;">Quero a Versão Essencial</a>
             <a href="https://homemdepresenca.github.io/obrigado" class="btn-secondary" style="margin-top: 12px; font-size: 13px;">Não, obrigado.</a>
         </div>
     </div>
